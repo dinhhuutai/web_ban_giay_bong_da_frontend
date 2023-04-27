@@ -1,0 +1,20 @@
+.wrapper{
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart-icon{
+    font-size: 2rem;
+}
+
+.notice{
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    padding: 0px 4px;
+    border-radius: 20px;
+    background-color: #b86c02;
+    font-size: 1.2rem;
+    color: #fff;
+}

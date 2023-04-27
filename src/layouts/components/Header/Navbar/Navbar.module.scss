@@ -1,0 +1,25 @@
+.wrapper{
+    padding: 5px 60px 0px;
+}
+
+.navbar-list{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar-item{
+
+}
+
+.navbat-item-link{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.navbat-item-link.active{
+    color: #fff;
+}

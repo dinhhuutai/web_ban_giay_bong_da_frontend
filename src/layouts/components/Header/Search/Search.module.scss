@@ -1,0 +1,22 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input{
+    border: none;
+    outline: none;
+    width: 550px;
+    font-size: 1.4rem;
+    padding: 8px 30px 8px 14px;
+    border-radius: 2px;
+}
+
+.icon-search{
+    font-size: 2rem;
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+}
+

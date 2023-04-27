@@ -3,7 +3,15 @@
 
 
 :root {
+    --header-support-height: 14px;
+    --header-height: 100px;
+    --header-background: #2B6A85;
     
+    --bg-white: #fff;
+    --bg-black: #000;
+
+    --color-white: #fff;
+    --color-black: #000;
 
 }
 
@@ -26,7 +34,7 @@ body {
 }
 
 ::-webkit-scrollbar{
-    width: 4px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track{
@@ -34,7 +42,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb{
-    background: #7b47a5;
+    background: #3a3434;
     border-radius: 10px;
     // display: none;
     -webkit-border-radius: 10px;

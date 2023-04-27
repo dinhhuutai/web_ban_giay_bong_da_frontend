@@ -1,0 +1,38 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio{
+    background-color: #b0e8f8;
+    padding: 20px;
+    width: 228px;
+}
+
+.title{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.list-portfolio{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.item-portfolio{
+    margin-top: 12px;
+    padding: 4px 0px;
+    cursor: pointer;
+}
+
+.item-portfolio:active{
+    opacity: .7;
+}
+
+.item-portfolio:not(:nth-last-child(1)) {
+    border-bottom: 1px solid #baa6a6;
+}
+
+
+

@@ -6,7 +6,7 @@ import DefaultLayout from './layouts';
 function App() {
     return (
         <Router>
-            <div className="App dark">
+            <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         return (

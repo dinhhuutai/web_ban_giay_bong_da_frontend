@@ -1,0 +1,46 @@
+.wrapper{
+
+}
+
+.header-support{
+    height: var(--header-support-height);
+    text-align: center;
+    background-color: #676464;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    color: #fff;
+}
+
+.wrapper-header{
+    background-color: var(--header-background);
+    height: var(--header-height);
+    position: fixed;
+    top: var(--header-support-height);
+    left: 0;
+    right: 0;
+    transition: all ease .2s;
+    box-shadow: 0px 1px 0px 0px #765151;
+    z-index: 999999;
+}
+
+.header-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    padding-top: 10px;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.wrapper-login{
+    display: flex;
+    gap: 16px;
+}
+
+
+
+

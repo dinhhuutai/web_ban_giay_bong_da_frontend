@@ -1,0 +1,36 @@
+.wrapper{
+    padding-top: 40px;
+    overflow: hidden;
+}
+
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.l-2-4 {
+    display: block;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.l-10-4 {
+    display: block;
+    flex: 0 0 79%;
+    max-width: 79%;
+}
+
+

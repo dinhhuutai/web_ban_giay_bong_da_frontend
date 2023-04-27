@@ -1,0 +1,197 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.search{
+    background-color: #b0e8f8;
+    padding: 20px;
+    width: 228px;
+}
+
+.title{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #534242;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #ccbaba;
+}
+
+.trademark{
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccbaba;
+}
+
+.title-item{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.list-trademark{
+    list-style: none;
+}
+
+.item-trademark{
+    display: flex;
+    margin-top: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+.item-trademark:active{
+    opacity: .7;
+}
+
+.input-trademark{
+    cursor: pointer;
+}
+
+.text-trademark{
+    text-transform: uppercase;
+    margin-left: 6px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+.price{
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccbaba;
+}
+
+.list-price{
+    list-style: none;
+}
+
+.item-price{
+    display: flex;
+    margin-top: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.item-price:active{
+    opacity: .7;
+}
+
+.input-price{
+    cursor: pointer;
+}
+
+.text-price{
+    margin-left: 6px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+.color{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.list-color{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.item-color{
+    display: flex;
+    margin-top: 8px;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.item-color:active{
+    opacity: .7;
+}
+
+.l-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.l-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.input-color{
+    cursor: pointer;
+}
+
+.text-color{
+    margin-left: 6px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.board-all{
+    background: linear-gradient(#000, #FFA500, #0000FF, #FFFF00, #FF0000);
+}
+
+.board-color{
+    height: 12px;
+    width: 12px;
+    border: .5px solid #d1cccc;
+}
+
+.board-gray{
+    background-color: gray;
+}
+
+.board-white{
+    background-color: white;
+}
+
+.board-black{
+    background-color: black;
+}
+
+.board-orange{
+    background-color: orange;
+}
+
+.board-green{
+    background-color: green;
+}
+
+.board-blue{
+    background-color: blue;
+}
+
+.board-yellow{
+    background-color: yellow;
+}
+
+.board-pink{
+    background-color: pink;
+}
+
+.board-red{
+    background-color: red;
+}
+
+.board-brown{
+    background-color: brown;
+}
+
+
+
