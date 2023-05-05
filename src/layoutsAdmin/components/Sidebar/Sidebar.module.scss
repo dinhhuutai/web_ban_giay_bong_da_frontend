@@ -1,0 +1,118 @@
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--width-sidebar-admin);
+    background-color: var(--bg-sidebar-light);
+    box-shadow: 0 2px 2px 0 rgb(28 29 31 / 81%), 0 3px 1px -2px rgb(25 26 27 / 83%), 0 1px 5px 0 rgb(60 75 100 / 62%);
+}
+
+.logo-brand{
+    height: var(--height-header-admin);
+    background-color: var(--bg-brand-sidebar-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-logo{
+    display: flex;
+}
+
+.logo-brand-img{
+    width: 130px;
+}
+
+.nav-bar{
+    overflow: hidden;
+    overflow-y: auto;
+    height: calc(100vh - var(--height-header));
+}
+
+.nav-bar-list{
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-bar-item{
+    margin-top: 10px;
+}
+
+.nav-bar-item.active{
+    background-color: var(--bg-sidebar-nav-group-light);
+}
+
+.nav-bar-item .nav-bar-item-down-icon{
+    transition: all ease .4s;
+    transform: rotate(0deg);
+}
+
+.nav-bar-item.active .nav-bar-item-down-icon{
+    transition: all ease .4s;
+    transform: rotate(180deg);
+}
+
+.nav-bar-link-con,
+.nav-bar-link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    font-size: 1.6rem;
+    color: var(--color-sidebar-light);
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-bar-link-con:hover,
+.nav-bar-link:hover{
+    background-color: var(--bg-sidebar-active-light);
+    color: var(--color-sidebar-active-light);
+}
+
+.nav-bar-link-con.active,
+.nav-bar-link.active{
+    background-color: var(--bg-sidebar-active-light);
+    color: var(--color-sidebar-active-light);
+}
+
+.nav-bar-item--wrapper-icon{
+    margin-right: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    min-width: 25px;
+}
+
+.nav-bar-item-down-icon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 20px;
+}
+
+.nav-bar-item-list{
+    padding-bottom: 6px;
+}
+
+.nav-bar-item .nav-bar-item-list{
+    display: none;
+}
+
+.nav-bar-item.active .nav-bar-item-list{
+    display: block;
+}
+
+.nav-bar-item-list-item{
+    margin-top: 6px;
+}
+
+.nav-bar-link-con{
+    font-size: 1.4rem;
+    padding-left: 77px;
+}

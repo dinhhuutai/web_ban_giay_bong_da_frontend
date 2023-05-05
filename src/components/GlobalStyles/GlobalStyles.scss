@@ -13,6 +13,44 @@
     --color-white: #fff;
     --color-black: #000;
 
+
+
+    --height-header-admin: 65px;
+    --width-sidebar-admin: 256px;
+
+    --bg-primary-light: #fff;
+    --bg-body-light: rgb(235, 237, 239);
+    --color-light: #000;
+    --color-primary-light: rgba(44, 56, 74, 0.681);
+    --color-primary-hover-light: rgba(44, 56, 74, 0.95);
+    --color-border-btn-light: #9da5b1;
+    --bg-btn-active-light: #b1b7c1;
+    --color-border-btn-active-light: #a7aeb9;
+    --bg-brand-sidebar-light: rgba(0, 0, 21, .2);
+    --color-brand-sidebar-light: rgba(255, 255, 255, .87);
+    --bg-sidebar-light: #3c4b64;
+    --color-sidebar-light: rgba(255, 255, 255, .6);
+    --bg-sidebar-active-light: rgba(255, 255, 255, 0.05);
+    --color-sidebar-active-light: rgba(255, 255, 255, 0.87);
+    --bg-sidebar-nav-group-light: rgba(0, 0, 0, 0.2);
+
+
+    --bg-primary-dark: #2a2b36;
+    --bg-body-dark: #181924;
+    --color-dark: rgba(255, 255, 255, 0.87);
+    --color-primary-dark: rgba(255, 255, 255, 0.75);
+    --color-primary-hover-dark: rgba(255, 255, 255, 0.9);
+    --color-border-btn-dark: #a7a7a7;
+    --bg-btn-active-dark: #868686;
+    --color-border-btn-active-dark: #7d7d7d;
+    --bg-brand-sidebar-dark: rgba(0, 0, 21, .2);
+    --color-brand-sidebar-dark: rgba(255, 255, 255, .87);
+    --bg-sidebar-dark: #2a2b36;
+    --color-sidebar-dark: rgba(255, 255, 255, .6);
+    --bg-sidebar-active-dark: rgba(255, 255, 255, 0.05);
+    --color-sidebar-active-dark: rgba(255, 255, 255, 0.87);
+    --bg-sidebar-nav-group-dark: rgba(0, 0, 0, 0.2);
+
 }
 
 * {
@@ -35,6 +73,7 @@ body {
 
 ::-webkit-scrollbar{
     width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track{

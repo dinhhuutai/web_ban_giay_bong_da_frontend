@@ -1,0 +1,263 @@
+.wrapper{
+    display: block;
+    margin: 0px 20px;
+    background-color: var(--bg-primary-light);
+    color: var(--color-primary-light);
+    box-shadow: 0px 0px 8px 0px #604e4e73;
+    border-radius: 6px;
+    padding: 26px 30px;
+}
+
+.wrapper-table{
+    width: 100%;
+    display: flex;
+}
+
+.table {
+
+}
+
+.table-1{
+    margin: 0 0 46px 0;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    width: 40%;
+    z-index: 1;
+}
+
+.wrapper-table-2{
+    width: 60%;
+    overflow-x: auto;
+}
+
+.table-2{
+    margin: 0 0 40px 0;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    width: min-content;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-primary-light);
+    
+    &:nth-of-type(odd){
+        background-color: var(--bg-body-light);
+    }
+    
+    &.header{
+        font-weight: 900;
+        color: #ffffff;
+        background: #ea6153;
+    }
+    
+    &.green{
+        background: #27ae60;
+    }
+    
+    &.blue{
+        background: #657e8e;
+    }
+    
+}
+
+.cell{
+    padding: 6px 12px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell-input{
+    width: 40px;
+}
+
+.cell-stt{
+    width: 60px;
+}
+
+.cell-name{
+    flex: 1;
+}
+
+.cell-image{
+    width: 90px;
+    position: relative;
+}
+
+.wrapper-image-support:hover,
+.cell-img:hover ~ .wrapper-image-support{
+    display: block;
+}
+
+.wrapper-image-support{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -268%;
+    left: 80px;
+    padding: 10px;
+    background-color: var(--bg-primary-light);
+    box-shadow: 0px 0px 10px var(--color-primary-light);
+    border-radius: 8px;
+    z-index: 10;
+    display: none;
+    animation: slide ease .5s;
+}
+
+@keyframes slide {
+    0%{
+        top: -268%;
+        left: -80px;
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        top: -268%;
+        left: 80px;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.wrapper-image-support::after{
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    box-shadow: -3px 3px 5px var(--color-primary-light);
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent var(--bg-primary-light) var(--bg-primary-light);
+    border-radius: 1px;
+    transform: rotate(45deg);
+}
+
+.wrapper-image-support::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 48%;
+    border: 15px solid transparent;
+}
+
+.image-support{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.cell-category{
+    width: 170px;
+}
+.cell-trademark{
+    width: 150px;
+}
+.cell-color{
+    width: 140px;
+}
+.cell-size{
+    width: 120px;
+}
+.cell-quantity{
+    width: 120px;
+}
+.cell-new{
+    width: 120px;
+}
+.cell-price{
+    width: 120px;
+}
+.cell-discount{
+    width: 120px;
+}
+
+.cell-img{
+    width: 50px;
+    height: 30px;
+    border: 1px solid var(--color-primary-light);
+}
+
+.color{
+    margin-right: 10px;
+    height: 14px;
+    width: 14px;
+    border: 1px solid var(--color-primary-light);
+}
+
+
+
+.wrapper-paging{
+    margin-top: 80px;
+}
+
+.paging{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: var(--color-primary-light);
+    font-size: 1.4rem;
+    border: 1px solid var(--color-border-btn-light);
+    font-weight: 600;
+}
+
+.page.active {
+    background-color: #488ba7;
+    border: 1px solid #488ba7;
+    color: #fff;
+}
+
+.page.enable {
+    opacity: 0.4;
+    cursor: no-drop;
+}
+
+.number{
+
+}
+
+.dot{
+    align-items: flex-end;
+    padding-bottom: 6px;
+}
+
+.wrapper-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+
+.wrapper-icon{
+    display: flex;
+    gap: 20px;
+}
+
+.icon-header{
+    background-color: #488ba7;
+    color: #fff;
+    font-size: 1.8rem;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.wrapper-text{
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+

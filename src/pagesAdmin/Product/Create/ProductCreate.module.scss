@@ -1,0 +1,275 @@
+.wrapper{
+    
+}
+
+.main-img{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px dashed rgb(152, 148, 148);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.wrapper-main-img{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 100;
+}
+
+.word{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(135, 117, 117);
+    font-size: 1.4rem;
+
+    .content-message{
+        margin-top: 20px;
+    }
+}
+
+.icon-img{
+    font-size: 5rem;
+}
+
+.image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: -1;
+}
+
+
+.grid {
+    display: block;
+    margin: 0px 20px;
+    background-color: var(--bg-primary-light);
+    color: var(--color-primary-light);
+    box-shadow: 0px 0px 8px 0px #604e4e73;
+    border-radius: 6px;
+    padding: 26px 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.l-6 {
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.wrapper-input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.label{
+    font-size: 1.4rem;
+}
+
+.input{
+    font-size: 1.4rem;
+    margin-top: 4px;
+    padding: 6px 8px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    border: 1px solid #1e0f0f;
+    flex: 1;
+}
+
+.wrapper-discount{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.wrapper-isNew{
+    margin-top: 4px;
+    display: flex;
+    gap: 40px;
+}
+
+.wrapper-radio{
+    display: flex;
+    gap: 6px;
+}
+
+.wrapper-select{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.select{
+    width: 140px;
+    outline: none;
+    padding: 6px 8px;
+    margin-top: 4px;
+}
+
+.description{
+    width: 100%;
+    margin-top: 40px;
+    height: 160px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    textarea {
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #333;
+        outline: none;
+        font-size: 1.4rem;
+        border-radius: 4px;
+    }
+}
+
+.label-ids{
+    font-size: 1.4rem;
+}
+
+.input-quantity{
+    font-size: 1.4rem;
+    margin-top: 4px;
+    padding: 6px 8px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    border: 1px solid #1e0f0f;
+    width: 100px;
+}
+
+.wrapper-des{
+    height: 100%;
+    width: 90%;
+}
+
+.wrapper-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 26px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    background-color: #2B6A85;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.btn:active{
+    opacity: .7;
+}
+
+
+.iamge-thumbnail-1,
+.iamge-thumbnail-2,
+.iamge-thumbnail-3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: -1;
+}
+
+.wrapper-thumbnail{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumbnail{
+    position: relative;
+    width: 100px;
+    height: 90px;
+    border: 2px dashed rgb(152, 148, 148);
+    cursor: pointer;
+    background-color: #fff;
+
+
+    input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 100;
+    }
+}
+
+.word-thumbnail{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon-img-thum{
+    font-size: 3rem;
+    color: #7b6464;
+}
+

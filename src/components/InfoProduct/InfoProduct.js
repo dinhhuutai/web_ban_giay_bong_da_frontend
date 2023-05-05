@@ -15,7 +15,7 @@ function InfoProduct({apiProduct}) {
 
     return <div className={cx('wrapper')}>
         <Link to={apiProduct.id} className={cx('link')}>
-            <img className={cx('img')} src={apiProduct.img} alt='giày' />
+            <img className={cx('img')} src={apiProduct.image[0]} alt='giày' />
             <div className={cx('name')}>{apiProduct.name}</div>
             <div className={cx('price')}>{apiProduct.price.toLocaleString()}đ</div>
             {

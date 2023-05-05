@@ -1,0 +1,35 @@
+.wrapper{
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    animation: slide ease .6s forwards;
+}
+
+@keyframes slide {
+    0%{
+        right: 0px;
+        transform: translateX(100%);
+        opacity: 0.2;
+    }
+    100%{
+        right: 10px;
+        opacity: 1;
+    }
+}
+
+.noti{
+    background-color: rgb(237, 29, 29);
+    padding: 10px 40px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.noti.success{
+    background-color: rgb(1, 134, 48);
+}
+
+.message{
+    font-size: 1.4rem;
+}
+
+

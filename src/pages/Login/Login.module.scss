@@ -1,0 +1,181 @@
+.wrapper{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bg-login{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    animation: RegisterRight ease 1s forwards;
+}
+
+.bg-login.active {
+    animation: RegisterLeft ease 1s forwards;
+}
+
+.img-login{
+    width: 100%;
+    height: 100%;
+}
+
+.text-login{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    color: #ffffff91;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 4px;
+    font-size: 5rem;
+    line-height: 5.6rem;
+    margin-top: 50px;
+    font-weight: 600;
+    top: 0;
+    left: 0;
+}
+
+.bg-register{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    animation: loginLeft ease 1s forwards;
+}
+
+.bg-register.active{
+    animation: loginRight ease 1s forwards;
+}
+
+.img-register-1{
+    width: 100%;
+    height: 50%;
+}
+
+.wrapper-register-bot{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-register{
+    font-weight: 600;
+    font-size: 3.6rem;
+    text-align: center;
+    line-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 0px 1px 4px #956c6c;
+    letter-spacing: 4px;
+}
+
+.wrapper-img-register{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.img-register-2{
+    width: 50%;
+    height: 100%;
+}
+
+.img-register-3{
+    width: 50%;
+    height: 100%;
+}
+
+
+.wrapper-login{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-formlogin{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    animation: loginRight ease 1s forwards;
+    display: none;
+}
+
+@keyframes loginRight {
+    0%{
+        display: block;
+        left: 50%;
+        opacity: 1;
+    }
+    100%{
+        left: 0%;
+        display: none;
+        opacity: 0;
+    }
+}
+
+.wrapper-formlogin.active{
+    display: block;
+    animation: loginLeft ease 1s forwards;
+}
+
+@keyframes loginLeft {
+    0%{
+        left: 0%;
+        display: none;
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+.wrapper-formregister{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: block;
+    animation: RegisterLeft ease 1s forwards;
+}
+
+@keyframes RegisterLeft {
+    0%{
+        left: 50%;
+        display: none;
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+.wrapper-formregister.active{
+    animation: RegisterRight ease 1s forwards;
+    display: none;
+}
+
+@keyframes RegisterRight {
+    0%{
+        display: block;
+        left: 0%;
+        opacity: 1;
+    }
+    100%{
+        left: 50%;
+        display: none;
+        opacity: 0;
+    }
+}
+
+

@@ -3,6 +3,58 @@
     cursor: pointer;
 }
 
+.wrapper.login {
+    position: absolute;
+    left: -86px;
+}
+
 .icon-user{
     font-size: 2rem;
 }
+
+.icon{
+    color: #000;
+}
+
+.wrapper-avatar{
+    width: 36px;
+}
+
+.avatar{
+    width: 100%;
+    border: 1px solid #f8f8f8;
+    border-radius: 50%;
+}
+
+
+.list-login{
+    list-style: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgb(165, 141, 141);
+    width: 110px;
+    position: absolute;
+    top: 48px;
+    right: 6px;
+
+    &.show{
+        display: block;
+    }
+
+    &.no-show{
+        display: none;
+    }
+}
+
+.item-login{
+    font-size: 1.4rem;
+    padding: 4px 14px;
+    width: 100%;
+}
+
+.wrapper-logout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

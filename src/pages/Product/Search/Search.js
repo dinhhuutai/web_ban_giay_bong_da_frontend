@@ -126,7 +126,7 @@ function Search({onClick}) {
 
         var newTrademarks = [];
         checkTrademarks.forEach(checkTrademark => {
-            newTrademarks.push(checkTrademark.getAttribute('data-trademark') * 1);
+            newTrademarks.push(checkTrademark.getAttribute('data-trademark'));
         });
 
         var endTrademarks = newTrademarks.filter(item => item !== null);
@@ -168,7 +168,7 @@ function Search({onClick}) {
 
         var newColors = [];
         checkColors.forEach(checkColor => {
-            newColors.push(checkColor.getAttribute('data-color') * 1);
+            newColors.push(checkColor.getAttribute('data-color'));
         });
 
         var endColors = newColors.filter(item => item !== null);
@@ -246,7 +246,7 @@ function Search({onClick}) {
                             <li key={index} className={cx('item-color', 'l-6')}>
                                 <input onChange={handleColor} id={apiColor.code} type='checkbox' className={cx('input-color')} data-color={apiColor.id} name='color' />
                                 <label for={apiColor.code} className={cx('text-color')}>
-                                    <div className={cx('board-color', `board-${apiColor.code}`)}></div>
+                                    <div style={{'background-color': apiColor.code}} className={cx('board-color')}></div>
                                     {apiColor.name}
                                 </label>
                             </li>
