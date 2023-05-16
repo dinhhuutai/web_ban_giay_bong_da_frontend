@@ -33,6 +33,10 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
         discount: product.discount,
         description: product.description,
         quantity: product.quantity,
+        imageOld: false,
+        thumbnail1Old: false,
+        thumbnail2Old: false,
+        thumbnail3Old: false,
     });
 
     const { name, price, size, idCategory, idTrademark, idColor, isNew, discount, description, quantity } = formData;
@@ -110,10 +114,10 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
         thumbnail3.current.style.zIndex = '10';
     }, [])
 
-    var isUploadImg = false;
+    const [isUploadImg, setIsUploadImg] = useState(false);
 
     function handleImage(e) {
-        isUploadImg = true;
+        setIsUploadImg(true);
         const check = e.target.files[0];
         const urlImg = URL.createObjectURL(check);
         setImgMain(e);
@@ -123,7 +127,7 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
     }
 
     function handleThumbnail1(e) {
-        isUploadImg = true;
+        setIsUploadImg(true);
         const check = e.target.files[0];
         const urlImg = URL.createObjectURL(check);
         setThumbnailOne(e);
@@ -133,7 +137,7 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
     }
 
     function handleThumbnail2(e) {
-        isUploadImg = true;
+        setIsUploadImg(true);
         const check = e.target.files[0];
         const urlImg = URL.createObjectURL(check);
         setThumbnailTwo(e);
@@ -143,7 +147,7 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
     }
 
     function handleThumbnail3(e) {
-        isUploadImg = true;
+        setIsUploadImg(true);
         const check = e.target.files[0];
         const urlImg = URL.createObjectURL(check);
         setThumbnailThree(e);
@@ -186,40 +190,10 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
     const handleSave = async (e) => {
         setDisabled(true);
 
-        if (name.trim() === '') {
+        if(name.trim() === ""){
             setNoti({
                 status: true,
-                text: 'Chưa nhập tên sản phẩm',
-                type: false,
-            });
-
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: 'Chưa nhập giá sản phẩm',
-                    type: false,
-                });
-            }, 5000);
-        } else if (price.trim() === '') {
-            setNoti({
-                status: true,
-                text: 'Chưa nhập giá sản phẩm',
-                type: false,
-            });
-
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: 'Chưa nhập giá sản phẩm',
-                    type: false,
-                });
-            }, 5000);
-
-            
-        } else if(price * 1 <= 0){
-            setNoti({
-                status: true,
-                text: "Giá sản phẩm không chính xác",
+                text: "Chưa nhập tên sản phẩm",
                 type: false,
             })
             
@@ -230,34 +204,133 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                     type: false,
                 })
             }, 5000)
-        } else if (quantity === '') {
+        } else if(price.trim() === ""){
             setNoti({
                 status: true,
-                text: 'Chưa nhập số lượng sản phẩm',
+                text: "Chưa nhập giá sản phẩm",
                 type: false,
-            });
-
+            })
+            
             setTimeout(() => {
                 setNoti({
                     status: false,
-                    text: 'Chưa nhập giá sản phẩm',
+                    text: "Chưa nhập giá sản phẩm",
                     type: false,
-                });
-            }, 5000);
-        } else if (description.trim() === '') {
+                })
+            }, 5000)
+            
+        } else if(!parseInt(price)) {
             setNoti({
                 status: true,
-                text: 'Chưa nhập mô tả sản phẩm',
+                text: "Giá sản phẩm không hợp lệ",
                 type: false,
-            });
-
+            })
+            
             setTimeout(() => {
                 setNoti({
                     status: false,
-                    text: 'Chưa nhập giá sản phẩm',
+                    text: "Chưa nhập giá sản phẩm",
                     type: false,
-                });
-            }, 5000);
+                })
+            }, 5000)
+        } else if(price * 1 <= 0){
+            setNoti({
+                status: true,
+                text: "Giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(discount.trim() !== "" && !parseInt(discount)){
+            setNoti({
+                status: true,
+                text: "Giảm giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(discount.trim() !== "" && discount * 1 <= 0){
+            setNoti({
+                status: true,
+                text: "Giảm giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(quantity === ""){
+            setNoti({
+                status: true,
+                text: "Chưa nhập số lượng sản phẩm",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(!parseInt(quantity)) {
+            setNoti({
+                status: true,
+                text: "Giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(quantity * 1 <= 0){
+            setNoti({
+                status: true,
+                text: "Số lượng sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(description.trim() === ""){
+            setNoti({
+                status: true,
+                text: "Chưa nhập mô tả sản phẩm",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
         } else {
             setNoti({
                 status: true,
@@ -274,11 +347,16 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                 thumbnail1: isUploadImg ? dataImg.data.link.thumbnail1[0].path : product.image[1],
                 thumbnail2: isUploadImg ? dataImg.data.link.thumbnail2[0].path : product.image[2],
                 thumbnail3: isUploadImg ? dataImg.data.link.thumbnail3[0].path : product.image[3],
+                imageOld: isUploadImg ? product.image[0] : false,
+                thumbnail1Old: isUploadImg ? product.image[1] : false,
+                thumbnail2Old: isUploadImg ? product.image[2] : false,
+                thumbnail3Old: isUploadImg ? product.image[3] : false,
             };
             
-            console.log(productData)
 
             const data = await axios.put(`${apiUrl}/admin/product/${product._id}`, productData);
+
+
 
             if (data.data.success) {
                 setNoti({

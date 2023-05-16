@@ -10,8 +10,11 @@ import {
     AiOutlineDelete,
 } from 'react-icons/ai';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 import config from '~/config';
-import UpdateProduct from '~/components/UpdateProduct/UpdateProduct';
+import UpdateProduct from '~/components/UpdateProduct';
+import ModelDelete from '~/components/ModelDelete';
 
 import { apiUrl } from '~/contexts/constants';
 import { ProductContext } from '~/contexts/ProductContext';
@@ -26,11 +29,13 @@ function ProductList() {
         getProduct,
         modelUpdate: { status, product },
         setModelUpdate,
+        modelDelete,
+        setModelDelete,
     } = useContext(ProductContext);
 
     const [noti, setNoti] = useState({
         status: false,
-        text: "",
+        text: '',
         type: false,
     });
 
@@ -142,57 +147,66 @@ function ProductList() {
     };
 
     const handleDelete = async (e) => {
+        if(arrayIdDelete.length > 0){
+            setModelDelete(true);
+        }
+    };
 
-        var data;
+    const handleCloseDelete = () => {
+        setModelDelete(false);
+    };
 
-        // await arrayIdDelete.map(async (id) =>{
+    const handleCloseDeleteNo = () => {
+        setModelDelete(false);
+    };
 
-        //     data = await axios.delete(`${apiUrl}/admin/product/${id}`);
-            
-        // })
+    const handleCloseDeleteYes = async () => {
+        setModelDelete(false);
 
-        arrayIdDelete.forEach(async (id) => {
-            data = await axios.delete(`${apiUrl}/admin/product/${id}`);
-        })
+        const req = {
+            listId: arrayIdDelete,
+        };
 
-        console.log(data);
+        const result = await axios.post(`${apiUrl}/admin/product/delete`, req);
 
-        if(data.data.success){
+        if (result.data.success) {
             setNoti({
                 status: true,
-                text: "Xóa sản phẩm thành công",
+                text: 'Xóa sản phẩm thành công',
                 type: true,
-            })
+            });
 
             getProduct(itemProductInPage, pageCurrent);
-        
+
+            const checks = document.querySelectorAll('input[name=product]');
+            checks.forEach((check) => {
+                check.checked = false;
+            });
+            setArrayIdDelete([]);
+
             setTimeout(() => {
                 setNoti({
                     status: false,
-                    text: "Chưa nhập giá sản phẩm",
+                    text: 'Chưa nhập giá sản phẩm',
                     type: false,
-                })
-            }, 5000)
+                });
+            }, 5000);
         } else {
             setNoti({
                 status: true,
-                text: "Xóa sản phẩm không thành công",
+                text: 'Xóa sản phẩm không thành công',
                 type: false,
-            })
-        
+            });
+
             setTimeout(() => {
                 setNoti({
                     status: false,
-                    text: "Chưa nhập giá sản phẩm",
+                    text: 'Chưa nhập giá sản phẩm',
                     type: false,
-                })
-            }, 5000)
+                });
+            }, 5000);
         }
-
-        //const data = await axios.delete(`${apiUrl}/admin/product/123`);
     };
-
-
 
     return (
         <div className={cx('wrapper')}>
@@ -418,6 +432,29 @@ function ProductList() {
             </div>
 
             {status ? <UpdateProduct itemProductInPage={itemProductInPage} pageCurrent={pageCurrent} /> : ''}
+
+            {modelDelete ? (
+                <div className={cx('wrapper-model-delete')}>
+                    <div className={cx('container-delete')}>
+                        <div className={cx('header-delete')}>
+                            <div onClick={handleCloseDelete} className={cx('icon-close-delete')}>
+                                <AiOutlineClose />
+                            </div>
+                        </div>
+                        <span className={cx('title-delete')}>Bạn có chắc chắn muốn xóa những sản phẩm này?</span>
+                        <div className={cx('wrapper-answer-delete')}>
+                            <button onClick={handleCloseDeleteNo} className={cx('answer-delete', 'no-delete')}>
+                                Không
+                            </button>
+                            <button onClick={handleCloseDeleteYes} className={cx('answer-delete', 'yes-delete')}>
+                                Có
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                ''
+            )}
         </div>
     );
 }

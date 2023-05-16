@@ -17,6 +17,8 @@ const ProductContextProvider = ({children}) => {
         product: {},
     });
 
+    const [modelDelete, setModelDelete] = useState(false);
+
     const getProduct = async (limit, pageCurrent) => {
         const response = await axios.get(`${apiUrl}/admin/product?limit=${limit}&skip=${limit * pageCurrent}`);
 
@@ -36,6 +38,8 @@ const ProductContextProvider = ({children}) => {
         getProduct,
         modelUpdate,
         setModelUpdate,
+        modelDelete,
+        setModelDelete,
     };
 
     return (

@@ -199,10 +199,52 @@ function ProductCreate() {
                 })
             }, 5000)
             
+        } else if(!parseInt(price)) {
+            setNoti({
+                status: true,
+                text: "Giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
         } else if(price * 1 <= 0){
             setNoti({
                 status: true,
-                text: "Giá sản phẩm không chính xác",
+                text: "Giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(discount.trim() !== "" && !parseInt(discount)){
+            setNoti({
+                status: true,
+                text: "Giảm giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(discount.trim() !== "" && discount * 1 <= 0){
+            setNoti({
+                status: true,
+                text: "Giảm giá sản phẩm không hợp lệ",
                 type: false,
             })
             
@@ -217,6 +259,34 @@ function ProductCreate() {
             setNoti({
                 status: true,
                 text: "Chưa nhập số lượng sản phẩm",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(!parseInt(quantity)) {
+            setNoti({
+                status: true,
+                text: "Giá sản phẩm không hợp lệ",
+                type: false,
+            })
+            
+            setTimeout(() => {
+                setNoti({
+                    status: false,
+                    text: "Chưa nhập giá sản phẩm",
+                    type: false,
+                })
+            }, 5000)
+        } else if(quantity * 1 <= 0){
+            setNoti({
+                status: true,
+                text: "Số lượng sản phẩm không hợp lệ",
                 type: false,
             })
             
@@ -269,18 +339,6 @@ function ProductCreate() {
                     type: true,
                 })
 
-                setFormData({
-                    name: '',
-                    price: '',
-                    size: '38',
-                    idCategory: '',
-                    idTrademark: '',
-                    idColor: '',
-                    isNew: true,
-                    discount: '',
-                    description: '',
-                    quantity: '',
-                })
 
                 imageMain.current.src = "";
                 imageMain.current.style.zIndex = '-1';
@@ -290,6 +348,31 @@ function ProductCreate() {
                 thumbnail2.current.style.zIndex = '-1';
                 thumbnail3.current.src = "";
                 thumbnail3.current.style.zIndex = '-1';
+
+                const listCategory = await axios.get(`${apiUrl}/admin/category`);
+                const listTrademark = await axios.get(`${apiUrl}/admin/trademark`);
+                const listColor = await axios.get(`${apiUrl}/admin/color`);
+
+                if (listCategory.data.success && listTrademark.data.success && listColor.data.success) {
+                    setSelect({
+                        categorys: listCategory.data.category,
+                        trademarks: listTrademark.data.trademark,
+                        colors: listColor.data.color,
+                    });
+
+                    setFormData({
+                        name: '',
+                        price: '',
+                        size: '38',
+                        idCategory: listCategory.data.category[0]._id,
+                        idTrademark: listTrademark.data.trademark[0]._id,
+                        idColor: listColor.data.color[0]._id,
+                        isNew: true,
+                        discount: '',
+                        description: '',
+                        quantity: '',
+                    })
+                }
             
                 setTimeout(() => {
                     setNoti({
