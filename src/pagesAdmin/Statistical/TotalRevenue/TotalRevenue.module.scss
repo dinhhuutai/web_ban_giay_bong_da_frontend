@@ -1,0 +1,71 @@
+.wrapper-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-title{
+    display: flex;
+    align-items: center;
+}
+
+
+.wrapper-main{
+    display: flex;
+}
+
+.wrapper-chart,
+.wrapper-total{
+    flex: 1;
+}
+
+.wrapper-total{
+    font-size: 1.8rem;
+    display: grid;
+    align-items: end;
+}
+
+.total{
+
+}
+
+.label{
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(43, 129, 204);
+}
+
+.wrapper-chart{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.chart{
+    width: 100%;
+    height: 40px;
+}
+
+.wrapper-text{
+    font-size: 1.2rem;
+    display: grid;
+    justify-content: end;
+    margin-top: 10px;
+    font-weight: 550;
+
+
+    .percent{
+        font-size: 1.4rem;
+        display: grid;
+        justify-content: end;
+        color: rgb(112, 159, 24);
+    }
+
+    
+    .red{
+        color: rgb(239, 21, 21);
+    }
+}
+

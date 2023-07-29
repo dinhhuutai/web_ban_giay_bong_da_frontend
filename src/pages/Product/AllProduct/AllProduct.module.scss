@@ -112,3 +112,31 @@
     padding-bottom: 6px;
 }
 
+
+@media screen and (max-width: 739px) {
+
+    .title{
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: #333;
+        margin-left: 20px;
+    }
+    
+    .wrapper-text{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-right: 0px;
+    }
+
+    .m-6 {
+        display: block;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    
+
+}
+

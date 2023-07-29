@@ -86,4 +86,23 @@
 }
 
 
+@media screen and (max-width: 739px) {
+    
+    .wrapper-collection{
+        margin-top: 20px;
+        padding: 0px 40px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .banner{
+        width: 100%;
+    }
+
+    .item-product-none{
+        display: none;
+    }
+
+
+}
 

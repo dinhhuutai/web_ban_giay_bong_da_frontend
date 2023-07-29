@@ -37,7 +37,7 @@ function CollectionNew() {
                         </div>
                     </Link>
                 </div>
-                <div className={cx('item-product')}>
+                <div className={cx('item-product', 'item-product-none')}>
                     <Link to="#" className={cx('link-product')}>
                         <img src={product3} alt='product' className={cx('img-product')} />
                         <div className={cx('info-product')}>
@@ -46,7 +46,7 @@ function CollectionNew() {
                         </div>
                     </Link>
                 </div>
-                <div className={cx('item-product')}>
+                <div className={cx('item-product', 'item-product-none')}>
                     <Link to="#" className={cx('link-product')}>
                         <img src={product4} alt='product' className={cx('img-product')} />
                         <div className={cx('info-product')}>

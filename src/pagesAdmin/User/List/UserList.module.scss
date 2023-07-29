@@ -1,0 +1,143 @@
+.wrapper{
+    display: block;
+    margin: 0px 20px;
+    background-color: var(--bg-primary-light);
+    color: var(--color-primary-light);
+    box-shadow: 0px 0px 8px 0px #604e4e73;
+    border-radius: 6px;
+    padding: 26px 30px;
+}
+
+
+
+/*  page   */
+.wrapper-paging{
+    margin-top: 80px;
+}
+
+.paging{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: var(--color-primary-light);
+    font-size: 1.4rem;
+    border: 1px solid var(--color-border-btn-light);
+    font-weight: 600;
+}
+
+.page.active {
+    background-color: #488ba7;
+    border: 1px solid #488ba7;
+    color: #fff;
+}
+
+.page.enable {
+    opacity: 0.4;
+    cursor: no-drop;
+}
+
+.number{
+
+}
+
+.dot{
+    align-items: flex-end;
+    padding-bottom: 6px;
+}
+/*  page   */
+
+.header{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.body{
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 18px;
+    border-bottom: 1.5px solid #d8d3d3;
+    padding: 6px 0px;
+
+    &:nth-of-type(odd){
+        background-color: var(--bg-body-light);
+    }
+}
+
+.cell-stt {
+    width: 5%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    padding-left: 10px;
+}
+
+.cell-avatar{
+    display: flex;
+    align-items: center;
+    width: 8%;
+}
+
+.cell-role {
+    width: 5%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.cell-full-name{
+    width: 15%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.cell-email{
+    width: 30%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.cell-phone {
+    width: 10%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.cell-create-at {
+    width: 15%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.cell-avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #333;
+}

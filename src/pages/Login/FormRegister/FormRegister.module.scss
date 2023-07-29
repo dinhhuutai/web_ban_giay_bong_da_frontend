@@ -90,3 +90,12 @@
     color: #002279;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 739px) {
+    .wrapper{
+        background-color: var(--header-background);
+        height: 100%;
+        padding: 0px 50px;
+        padding-top: 50px;
+    }
+}

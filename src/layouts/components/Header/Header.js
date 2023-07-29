@@ -38,7 +38,10 @@ function Header({scrollTop}) {
                 <Search />
                 <div className={cx('wrapper-login')}>
                     <Login />
-                    <Cart />
+
+                    <div className={cx('wrapper-cart')}>
+                        <Cart />
+                    </div>
                 </div>
             </div>
             <div className={cx('header-controll-path')}>

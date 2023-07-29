@@ -15,49 +15,49 @@ function FindBrand() {
         </div>
         <div className={cx('container')}>
             <div className={cx('row')}>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>
                     </Link> 
                 </div>
-                <div className={cx('col', 'l-3')}>
+                <div className={cx('col', 'l-3', 'm-12')}>
                     <Link to="#" className={cx('link-brand')}>
                         <img className={cx('img-brand')} src={imgBrand} alt="img-brand" />
                         <div className={cx('text-brand')}>Nike</div>

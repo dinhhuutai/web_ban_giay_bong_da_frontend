@@ -8,13 +8,25 @@ const router = {
     customer: '/khach-hang',
     contact: '/lien-he',
     login: '/dang-nhap',
+    detailProduct: '/chi-tiet-san-pham',
+    cart: '/gio-hang',
+    payment: '/thanh-toan',
+    myProfile: '/user/profile',
+    myPurchase: '/user/purchase',
+    detailOrder: '/chi-tiet-don-hang',
 
     adminStatistical: '/admin/statistical',
     adminUser: '/admin/user/list',
     adminUserAdd: '/admin/user/create',
     adminProduct: '/admin/product/list',
     adminProductAdd: '/admin/product/create',
+    adminOrderAll: '/admin/order/all',
+    adminOrderWaiting: '/admin/order/waiting',
+    adminOrderProccessing: '/admin/order/proccessing',
+    adminOrderSuccessed: '/admin/order/successed',
+    adminOrderCancelled: '/admin/order/cancelled',
     adminShop: '/admin/shop',
+    adminDetailOrder: '/admin/order/detail',
 }
 
 export default router;

@@ -34,5 +34,24 @@
     border-bottom: 1px solid #baa6a6;
 }
 
+.wrapper-closed {
+    display: none;
+}
+
+@media screen and (max-width: 739px) {
+
+    
+    .wrapper-closed {
+        display: block;
+        display: flex;
+        justify-content: end;
+        font-size: 2.2rem;
+        padding: 4px;
+        margin-bottom: 4px;
+    }
+
+    
+
+}
 
 

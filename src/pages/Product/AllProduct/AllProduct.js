@@ -12,13 +12,14 @@ import { ProductContext } from '~/contexts/ProductContext';
 
 const cx = classNames.bind(styles);
 
-function AllProduct({title, onClick}) {
+function AllProduct({title, onClick, search, setSideBar, sideBar}) {
     
     const {
         productState: { quantityProduct, products },
         getProduct,
         modelUpdate: { status, product },
         setModelUpdate,
+        getProductBy,
     } = useContext(ProductContext);
 
     
@@ -33,7 +34,8 @@ function AllProduct({title, onClick}) {
 
     
     useEffect(() => {
-        getProduct(itemProductInPage, pageCurrent);
+        getProductBy(itemProductInPage, pageCurrent, search);
+
     }, [pageCurrent]);
 
 
@@ -96,7 +98,7 @@ function AllProduct({title, onClick}) {
     return <div className={cx('wrapper')}>
         <div className={cx('title')}>{title}</div>
         <div className={cx('wrapper-arrange')}>
-            <div className={cx('warpper-icon')}><AiFillAppstore /></div>
+            <div onClick={() => setSideBar(!sideBar)} className={cx('warpper-icon')}><AiFillAppstore /></div>
             <div className={cx('wrapper-text')}>
                 <div className={cx('text')}>Sắp xếp theo:</div>
                 <select onChange={handleArrange} className={cx('select-arrange')} name='arrange' id='arrange'>
@@ -110,7 +112,7 @@ function AllProduct({title, onClick}) {
             <div className={cx('row')}>
                 {
                     products.map((apiProduct, index) => 
-                        <div key={index} className={cx('col', 'l-3')}>
+                        <div key={index} className={cx('col', 'l-3', 'm-6')}>
                             <InfoProduct apiProduct={apiProduct} />
                         </div>
                     )

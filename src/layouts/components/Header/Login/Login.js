@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
 
@@ -31,23 +31,41 @@ function Login() {
         logoutUser();
     }
 
+    const [avatar, setAvatar] = useState('');
+    
+    useEffect(() => {
+        setAvatar(user && user.avatar);
+    }, [user]);
+
     return (
         <div className={cx('wrapper', { login: isAuthenticated })}>
             {isAuthenticated ? (
                 <div onClick={(e) => handleAvatar()} className={cx('wrapper-avatar')}>
-                    <img className={cx('avatar')} src={user.avatar} alt="avatar" />
+                    <img className={cx('avatar')} src={avatar && (avatar[1] || avatar[0])} alt="avatar" />
                     <ul className={cx('list-login', showNavbar)}>
-                        <li onClick={handleLogout} className={cx('item-login')}>
+                        <li className={cx('item-user', 'item')}>
+                            <Link className={cx('link')} to={config.routes.myProfile}>Tài khoản của tôi</Link>
+                        </li>
+                        <li className={cx('item-purchase', 'item')}>
+                            <Link className={cx('link')} to={config.routes.myPurchase}>Đơn mua của tôi</Link>
+                        </li>
+                        <li onClick={handleLogout} className={cx('item-login', 'item')}>
                             <div className={cx('wrapper-logout')}>
                                 Log out
                                 <AiOutlineLogout />
                             </div>
                         </li>
                     </ul>
+                    <div className={cx('wrapper-text')}>
+                        cá nhân
+                    </div>
                 </div>
             ) : (
                 <Link to={config.routes.login} className={cx('icon-user')}>
                     <AiOutlineUser className={cx('icon')} />
+                    <div className={cx('wrapper-text')}>
+                        cá nhân
+                    </div>
                 </Link>
             )}
         </div>

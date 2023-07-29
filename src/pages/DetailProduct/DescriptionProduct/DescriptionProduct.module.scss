@@ -1,0 +1,50 @@
+.wrapper {
+    margin-top: 80px;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.description {
+    white-space: pre-wrap;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    padding: 0px 50px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.see::after{
+    position: absolute;
+    content: "";
+    background: linear-gradient(rgb(255 255 255 / 0%), rgb(255 255 255));
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0px;
+}
+
+.btn{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-more{
+    padding: 6px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+
+@media screen and (max-width: 739px) {
+    .wrapper {
+        margin-top: 40px;
+    }
+    
+    .title {
+        text-transform: uppercase;
+        margin-left: 20px;
+    }
+}

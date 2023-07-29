@@ -5,18 +5,26 @@ import {NavLink} from 'react-router-dom';
 
 import config from '~/config';
 
+import { AiTwotoneHome, AiFillAppstore } from "react-icons/ai";
+
 const cx = classNames.bind(styles);
 
 function Navbar() {
     return <div className={cx('wrapper')}>
         <ul className={cx('navbar-list')}>
             <li className={cx('navbar-item')}>
-                <NavLink to={config.routes.home} className={(nav) => cx('navbat-item-link', {active: nav.isActive})}>
+                <NavLink to={config.routes.home} className={(nav) => cx('navbat-item-link', 'navbat-item-link-mobile', {active: nav.isActive})}>
+                    <div className={cx('wrapper-icon-home')}>
+                        <AiTwotoneHome />
+                    </div>
                     trang chủ
                 </NavLink>
             </li>
             <li className={cx('navbar-item')}>
-                <NavLink to={config.routes.product} className={(nav) => cx('navbat-item-link', {active: nav.isActive})}>
+                <NavLink to={config.routes.product} className={(nav) => cx('navbat-item-link', 'navbat-item-link-mobile', {active: nav.isActive})}>
+                    <div className={cx('wrapper-icon-product')}>
+                        <AiFillAppstore />
+                    </div>
                     tất cả sản phẩm
                 </NavLink>
             </li>

@@ -22,3 +22,41 @@
 .icon{
     color: #000;
 }
+
+.text-cart{
+    display: none;
+}
+
+@media screen and (max-width: 739px) {
+    
+    .wrapper{
+        position: relative;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .cart-icon{
+        text-decoration: none;
+    }
+    
+    .text-cart{
+        display: block;
+        font-weight: 550;
+        text-transform: uppercase;
+        color: #000;
+        font-size: .8rem;
+    }
+
+    
+    .notice{
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        padding: 0px 4px;
+        border-radius: 20px;
+        background-color: #b86c02;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+}

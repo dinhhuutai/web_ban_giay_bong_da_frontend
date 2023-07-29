@@ -6,18 +6,21 @@ import GlobalStyles from '~/components/GlobalStyles';
 
 import AuthContextProvider from './contexts/AuthContext';
 import ProductContextProvider from './contexts/ProductContext';
+import OrderContextProvider from './contexts/OrderContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
+    //<React.StrictMode>
         <GlobalStyles>
             <AuthContextProvider>
             <ProductContextProvider>
+            <OrderContextProvider>
                 <App />
+            </OrderContextProvider>
             </ProductContextProvider>
             </AuthContextProvider>
         </GlobalStyles>
-    </React.StrictMode>,
+    //</React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

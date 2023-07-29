@@ -2,3 +2,13 @@
     margin-top: calc(var(--header-height));
     margin-bottom: 60px;
 }
+
+
+@media screen and (max-width: 739px) {
+    .container{
+        margin-top: 0px;
+        margin-bottom: calc(var(--header-height--mobile) + 20px);
+    }
+}
+
+

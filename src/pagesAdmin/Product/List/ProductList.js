@@ -15,6 +15,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import config from '~/config';
 import UpdateProduct from '~/components/UpdateProduct';
 import ModelDelete from '~/components/ModelDelete';
+import FixQuantityProductBySize from '~/components/FixQuantityProductBySize';
 
 import { apiUrl } from '~/contexts/constants';
 import { ProductContext } from '~/contexts/ProductContext';
@@ -31,6 +32,8 @@ function ProductList() {
         setModelUpdate,
         modelDelete,
         setModelDelete,
+        modelFixQuantityProductBySize,
+        setModelFixQuantityProductBySize,
     } = useContext(ProductContext);
 
     const [noti, setNoti] = useState({
@@ -100,14 +103,18 @@ function ProductList() {
     }, [pageCurrent]);
 
     const onclick = (e, product) => {
-        if (e.target.classList.contains('noibot')) {
-        } else {
-            setModelUpdate({
-                status: true,
-                product,
-            });
-        }
+        setModelUpdate({
+            status: true,
+            product,
+        });
     };
+
+    const handleQuantity = (product) => {
+        setModelFixQuantityProductBySize({
+            status: true,
+            product,
+        })
+    }
 
     const [arrayIdDelete, setArrayIdDelete] = useState([]);
     const refAllProduct = useRef();
@@ -251,7 +258,7 @@ function ProductList() {
                                     ref={refInput}
                                     onChange={handleProduct}
                                     data-product={product._id}
-                                    class="noibot"
+                                    onClick={(e) => e.stopPropagation()}
                                     type="checkbox"
                                     name="product"
                                 />
@@ -276,8 +283,7 @@ function ProductList() {
                             <div className={cx('cell', 'cell-category')}>Danh mục</div>
                             <div className={cx('cell', 'cell-trademark')}>Thương Hiệu</div>
                             <div className={cx('cell', 'cell-color')}>Màu</div>
-                            <div className={cx('cell', 'cell-size')}>Kích thước</div>
-                            <div className={cx('cell', 'cell-quantity')}>Số lượng</div>
+                            <div className={cx('cell', 'cell-quantity')}>Tổng Số lượng</div>
                             <div className={cx('cell', 'cell-new')}>Mới ra mắt</div>
                             <div className={cx('cell', 'cell-price')}>Giá</div>
                             <div className={cx('cell', 'cell-discount')}>Giảm giá</div>
@@ -307,11 +313,9 @@ function ProductList() {
                                     ></div>
                                     {product.idColor.name}
                                 </div>
-                                <div className={cx('cell', 'cell-size')} data-title={product.size}>
-                                    {product.size}
-                                </div>
                                 <div className={cx('cell', 'cell-quantity')} data-title={product.quantity}>
-                                    {product.quantity}
+                                    {product.totalQuantity}
+                                    <button onClick={(e) => {handleQuantity(product); e.stopPropagation()}} className={cx('fix-quantity')}>Chỉnh sửa số lượng</button>
                                 </div>
                                 <div className={cx('cell', 'cell-new')} data-title={product.isNew}>
                                     {product.isNew ? 'Có' : 'Không'}
@@ -432,6 +436,9 @@ function ProductList() {
             </div>
 
             {status ? <UpdateProduct itemProductInPage={itemProductInPage} pageCurrent={pageCurrent} /> : ''}
+
+            {modelFixQuantityProductBySize.status ? <FixQuantityProductBySize itemProductInPage={itemProductInPage} pageCurrent={pageCurrent} /> : ''}
+
 
             {modelDelete ? (
                 <div className={cx('wrapper-model-delete')}>

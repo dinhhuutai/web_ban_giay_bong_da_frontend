@@ -1,0 +1,57 @@
+.wrapper{
+
+}
+
+.title{
+    font-size: 1.8rem;
+    font-weight: 550;
+}
+
+.list{
+    margin-top: 10px;
+}
+
+.item{
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.wrapper-avatar{
+    width: 34px;
+    height: 34px;
+}
+
+.avatar{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #d8d3d3;
+}
+
+.wrapper-info{
+    margin-left: 4px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.name{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.email{
+    font-size: 1rem;
+}
+
+.spend{
+    font-size: 1.2rem;
+}
+
+
+

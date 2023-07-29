@@ -25,21 +25,19 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
     const [formData, setFormData] = useState({
         name: product.name,
         price: product.price,
-        size: product.size,
         idCategory: product.idCategory.name,
         idTrademark: product.idTrademark.name,
         idColor: product.idColor.name,
         isNew: product.isNew,
         discount: product.discount,
         description: product.description,
-        quantity: product.quantity,
         imageOld: false,
         thumbnail1Old: false,
         thumbnail2Old: false,
         thumbnail3Old: false,
     });
 
-    const { name, price, size, idCategory, idTrademark, idColor, isNew, discount, description, quantity } = formData;
+    const { name, price, idCategory, idTrademark, idColor, isNew, discount, description } = formData;
 
     const [noti, setNoti] = useState({
         status: false,
@@ -204,21 +202,6 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                     type: false,
                 })
             }, 5000)
-        } else if(price.trim() === ""){
-            setNoti({
-                status: true,
-                text: "Chưa nhập giá sản phẩm",
-                type: false,
-            })
-            
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: "Chưa nhập giá sản phẩm",
-                    type: false,
-                })
-            }, 5000)
-            
         } else if(!parseInt(price)) {
             setNoti({
                 status: true,
@@ -247,7 +230,7 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                     type: false,
                 })
             }, 5000)
-        } else if(discount.trim() !== "" && !parseInt(discount)){
+        } else if((discount.trim() !== "" && !parseInt(discount)) && discount !== "0"){
             setNoti({
                 status: true,
                 text: "Giảm giá sản phẩm không hợp lệ",
@@ -261,52 +244,10 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                     type: false,
                 })
             }, 5000)
-        } else if(discount.trim() !== "" && discount * 1 <= 0){
+        } else if(discount * 1 < 0){
             setNoti({
                 status: true,
                 text: "Giảm giá sản phẩm không hợp lệ",
-                type: false,
-            })
-            
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: "Chưa nhập giá sản phẩm",
-                    type: false,
-                })
-            }, 5000)
-        } else if(quantity === ""){
-            setNoti({
-                status: true,
-                text: "Chưa nhập số lượng sản phẩm",
-                type: false,
-            })
-            
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: "Chưa nhập giá sản phẩm",
-                    type: false,
-                })
-            }, 5000)
-        } else if(!parseInt(quantity)) {
-            setNoti({
-                status: true,
-                text: "Giá sản phẩm không hợp lệ",
-                type: false,
-            })
-            
-            setTimeout(() => {
-                setNoti({
-                    status: false,
-                    text: "Chưa nhập giá sản phẩm",
-                    type: false,
-                })
-            }, 5000)
-        } else if(quantity * 1 <= 0){
-            setNoti({
-                status: true,
-                text: "Số lượng sản phẩm không hợp lệ",
                 type: false,
             })
             
@@ -577,32 +518,7 @@ function UpdateProduct({itemProductInPage, pageCurrent}) {
                         </select>
                     </div>
 
-                    <div className={cx('wrapper-ids')}>
-                        <div className={cx('label-ids')}>Kích thước</div>
-                        <select name="size" onChange={handleFormData} className={cx('select')}>
-                            <option selected={product.size === "38"} value="38">38</option>
-                            <option selected={product.size === "39"} value="39">39</option>
-                            <option selected={product.size === "40"} value="40">40</option>
-                            <option selected={product.size === "41"} value="41">41</option>
-                            <option selected={product.size === "42"} value="42">42</option>
-                            <option selected={product.size === "43"} value="43">43</option>
-                            <option selected={product.size === "44"} value="44">44</option>
-                            <option selected={product.size === "45"} value="45">45</option>
-                        </select>
-                    </div>
-
-                    <div className={cx('wrapper-ids')}>
-                        <div className={cx('label-ids')}>Số lượng sản phẩm</div>
-                        <input
-                            value={quantity}
-                            id="quantity"
-                            type="number"
-                            className={cx('input-quantity')}
-                            name="quantity"
-                            placeholder="Số lượng"
-                            onChange={handleFormData}
-                        />
-                    </div>
+                    
                 </div>
 
                 <div className={cx('row')}>

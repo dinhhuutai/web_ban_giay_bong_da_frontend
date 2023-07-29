@@ -1,0 +1,150 @@
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000008e;
+    overflow: hidden;
+}
+
+.container{
+    width: 800px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px 30px;
+    animation: up ease .4s;
+}
+
+@keyframes up {
+    0%{
+        opacity: 0;
+        transform: scale(.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.closed{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.closed:hover{
+    background-color: rgb(217, 26, 26);
+    color: #fff;
+}
+
+.header{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.wrapper-img{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.img{
+    width: 150px;
+}
+
+.wrapper-main{
+    margin-top: 20px;
+}
+
+.wrapper-table{
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    display: flex;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.table::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #333;
+    top: 50%;
+    left: 0px;
+}
+
+.table-1{
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.table-2{
+
+}
+
+.roww{
+    padding: 0px 10px;
+    border-left: 1px solid #333;
+}
+
+.row{
+    padding: 0px 10px;
+    border-left: 1px solid #333;
+
+    &:nth-of-type(even){
+        background-color: var(--bg-body-light);
+    }
+}
+
+.cell{
+    text-align: center;
+    padding-top: 4px;
+}
+
+.footer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding-bottom: 30px;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    color:#fff;
+}
+
+.btn:active{
+    opacity: 0.7;
+}
+
+.decrease{
+    background-color: #d89f23;
+}
+
+.increase{
+    background-color: #75a96b;
+}
+
+

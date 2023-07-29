@@ -17,6 +17,11 @@ const ProductContextProvider = ({children}) => {
         product: {},
     });
 
+    const [modelFixQuantityProductBySize, setModelFixQuantityProductBySize] = useState({
+        status: false,
+        product: {},
+    });
+
     const [modelDelete, setModelDelete] = useState(false);
 
     const getProduct = async (limit, pageCurrent) => {
@@ -30,6 +35,18 @@ const ProductContextProvider = ({children}) => {
         }
     }
 
+    const getProductBy = async (limit, pageCurrent, search) => {
+        const response = await axios.post(`${apiUrl}/product?limit=${limit}&skip=${limit * pageCurrent}`, search);
+
+        if(response.data.success) {
+            dispatch({
+                type: GET_PRODUCT,
+                payload: response.data,
+            })
+        }
+    }
+
+
 
 
     //Post context data
@@ -40,6 +57,9 @@ const ProductContextProvider = ({children}) => {
         setModelUpdate,
         modelDelete,
         setModelDelete,
+        getProductBy,
+        modelFixQuantityProductBySize,
+        setModelFixQuantityProductBySize,
     };
 
     return (

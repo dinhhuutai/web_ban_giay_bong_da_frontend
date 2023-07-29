@@ -9,7 +9,13 @@ import Trademark from '~/pages/Trademark';
 import Sale from '~/pages/Sale';
 import Customer from '~/pages/Customer';
 import Contact from '~/pages/Contact';
+import DetailProduct from '~/pages/DetailProduct';
 import Login from '~/pages/Login';
+import Cart from '~/pages/Cart';
+import DeliveryInformation from '~/pages/DeliveryInformation';
+import Payment from '~/pages/Payment';
+import MyProfile from '~/pages/MyProfile';
+import DetailOrder from '~/pages/DetailOrder';
 
 import Statistical from '~/pagesAdmin/Statistical';
 import UserCreate from '~/pagesAdmin/User/Create';
@@ -17,6 +23,12 @@ import UserList from '~/pagesAdmin/User/List';
 import ProductCreate from '~/pagesAdmin/Product/Create';
 import ProductList from '~/pagesAdmin/Product/List';
 import Shop from '~/pagesAdmin/Shop';
+import OrderAll from '~/pagesAdmin/Order/All';
+import OrderWaiting from '~/pagesAdmin/Order/Waiting';
+import OrderProccessing from '~/pagesAdmin/Order/Proccessing';
+import OrderSuccessed from '~/pagesAdmin/Order/Successed';
+import OrderCancelled from '~/pagesAdmin/Order/Cancelled';
+import DetailOrderAdmin from '~/pagesAdmin/DetailOrderAdmin';
 
 
 const publicRoutes = [
@@ -53,9 +65,33 @@ const publicRoutes = [
         component: Contact,
     },
     {
+        path: config.routes.detailProduct,
+        component: DetailProduct,
+    },
+    {
         path: config.routes.login,
         component: Login,
         layout: false,
+    },
+    {
+        path: config.routes.cart,
+        component: Cart,
+    },
+    {
+        path: config.routes.myPurchase,
+        component: DeliveryInformation,
+    },
+    {
+        path: config.routes.payment,
+        component: Payment,
+    },
+    {
+        path: config.routes.myProfile,
+        component: MyProfile,
+    },
+    {
+        path: config.routes.detailOrder,
+        component: DetailOrder,
     },
 ]
 
@@ -83,6 +119,30 @@ const privateRoutes = [
     {
         path: config.routes.adminShop,
         component: Shop,
+    },
+    {
+        path: config.routes.adminOrderAll,
+        component: OrderAll,
+    },
+    {
+        path: config.routes.adminOrderWaiting,
+        component: OrderWaiting,
+    },
+    {
+        path: config.routes.adminOrderProccessing,
+        component: OrderProccessing,
+    },
+    {
+        path: config.routes.adminOrderSuccessed,
+        component: OrderSuccessed,
+    },
+    {
+        path: config.routes.adminOrderCancelled,
+        component: OrderCancelled,
+    },
+    {
+        path: config.routes.adminDetailOrder,
+        component: DetailOrderAdmin,
     },
 ]
 

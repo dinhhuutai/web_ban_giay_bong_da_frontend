@@ -18,7 +18,7 @@ function ProductCreate() {
     const [formData, setFormData] = useState({
         name: '',
         price: '',
-        size: '38',
+        idSize: '',
         idCategory: '',
         idTrademark: '',
         idColor: '',
@@ -28,7 +28,7 @@ function ProductCreate() {
         quantity: '',
     });
 
-    const { name, price, size, idCategory, idTrademark, idColor, isNew, discount, description, quantity } = formData;
+    const { name, price, idSize, idCategory, idTrademark, idColor, isNew, discount, description, quantity } = formData;
 
     const [noti, setNoti] = useState({
         status: false,
@@ -83,14 +83,15 @@ function ProductCreate() {
         categorys: [],
         trademarks: [],
         colors: [],
+        sizes: [],
     });
 
-    const { categorys, trademarks, colors } = select;
+    const { categorys, trademarks, colors, sizes } = select;
 
-    const [imgMain, setImgMain] = useState();
-    const [thumbnailOne, setThumbnailOne] = useState();
-    const [thumbnailTwo, setThumbnailTwo] = useState();
-    const [thumbnailThree, setThumbnailThree] = useState();
+    const [imgMain, setImgMain] = useState("");
+    const [thumbnailOne, setThumbnailOne] = useState("");
+    const [thumbnailTwo, setThumbnailTwo] = useState("");
+    const [thumbnailThree, setThumbnailThree] = useState("");
 
     var imageMain = useRef();
     var thumbnail1 = useRef();
@@ -137,12 +138,15 @@ function ProductCreate() {
         const listCategory = await axios.get(`${apiUrl}/admin/category`);
         const listTrademark = await axios.get(`${apiUrl}/admin/trademark`);
         const listColor = await axios.get(`${apiUrl}/admin/color`);
+        const listSize = await axios.get(`${apiUrl}/admin/size`);
+
 
         if (listCategory.data.success && listTrademark.data.success && listColor.data.success) {
             setSelect({
                 categorys: listCategory.data.category,
                 trademarks: listTrademark.data.trademark,
                 colors: listColor.data.color,
+                sizes: listSize.data.size,
             });
 
             setFormData({
@@ -150,6 +154,7 @@ function ProductCreate() {
                 idCategory: listCategory.data.category[0]._id,
                 idTrademark: listTrademark.data.trademark[0]._id,
                 idColor: listColor.data.color[0]._id,
+                idSize: listSize.data.size[0]._id,
             })
         }
     };
@@ -227,10 +232,10 @@ function ProductCreate() {
                     type: false,
                 })
             }, 5000)
-        } else if(discount.trim() !== "" && !parseInt(discount)){
+        } else if((discount.trim() !== "" && !parseInt(discount)) && discount !== "0"){
             setNoti({
                 status: true,
-                text: "Giảm giá sản phẩm không hợp lệ",
+                text: "Giảm giá sản phẩm không hợp lệ 1",
                 type: false,
             })
             
@@ -241,7 +246,7 @@ function ProductCreate() {
                     type: false,
                 })
             }, 5000)
-        } else if(discount.trim() !== "" && discount * 1 <= 0){
+        } else if(discount * 1 < 0){
             setNoti({
                 status: true,
                 text: "Giảm giá sản phẩm không hợp lệ",
@@ -352,18 +357,20 @@ function ProductCreate() {
                 const listCategory = await axios.get(`${apiUrl}/admin/category`);
                 const listTrademark = await axios.get(`${apiUrl}/admin/trademark`);
                 const listColor = await axios.get(`${apiUrl}/admin/color`);
+                const listSize = await axios.get(`${apiUrl}/admin/size`);
 
-                if (listCategory.data.success && listTrademark.data.success && listColor.data.success) {
+                if (listCategory.data.success && listTrademark.data.success && listColor.data.success && listSize.data.success) {
                     setSelect({
                         categorys: listCategory.data.category,
                         trademarks: listTrademark.data.trademark,
                         colors: listColor.data.color,
+                        sizes: listSize.data.size,
                     });
 
                     setFormData({
                         name: '',
                         price: '',
-                        size: '38',
+                        idSize: listSize.data.size[0]._id,
                         idCategory: listCategory.data.category[0]._id,
                         idTrademark: listTrademark.data.trademark[0]._id,
                         idColor: listColor.data.color[0]._id,
@@ -420,10 +427,9 @@ function ProductCreate() {
             }
         }
 
-        
         setDisabled(false);
-
     };
+
 
     return (
         <div className={cx('wrapper')}>
@@ -595,15 +601,12 @@ function ProductCreate() {
 
                     <div className={cx('wrapper-ids')}>
                         <div className={cx('label-ids')}>Kích thước</div>
-                        <select name="size" onChange={handleFormData} className={cx('select')}>
-                            <option value="38">38</option>
-                            <option value="39">39</option>
-                            <option value="40">40</option>
-                            <option value="41">41</option>
-                            <option value="42">42</option>
-                            <option value="43">43</option>
-                            <option value="44">44</option>
-                            <option value="45">45</option>
+                        <select name="idSize" onChange={handleFormData} className={cx('select')}>
+                            {sizes.map((size, index) => (
+                                <option key={index} value={size._id}>
+                                    {size.size.$numberDecimal}
+                                </option>
+                            ))}
                         </select>
                     </div>
 

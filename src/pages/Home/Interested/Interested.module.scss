@@ -35,4 +35,17 @@
 }
 
 
+@media screen and (max-width: 739px) {
+    
+    .wrapper-interested{
+        margin-top: 30px;
+        padding: 0px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+}
+
+
 

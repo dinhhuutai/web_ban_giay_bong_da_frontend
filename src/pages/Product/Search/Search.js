@@ -2,101 +2,43 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
 
+import { apiUrl } from '~/contexts/constants';
+import axios from 'axios';
 
 
 const cx = classNames.bind(styles);
 
 function Search({onClick}) {
 
-    const apiTrademarks = [
-        {
-            id: 0,
-            name: 'nike',
-            code: 'nike',
-        },
-        {
-            id: 1,
-            name: 'adidas',
-            code: 'adidas',
-        },
-        {
-            id: 2,
-            name: 'puma',
-            code: 'puma',
-        },
-        {
-            id: 3,
-            name: 'mizuno',
-            code: 'mizuno',
-        },
-    ];
+    
+    const [apiTrademarks, setApiTrademarks] = useState([]);
+    const [apiColors, setApiColors] = useState([]);
 
-    const apiColors = [
-        {
-            id: 0,
-            name: 'Xám',
-            code: 'gray',
-        },
-        {
-            id: 1,
-            name: 'Trắng',
-            code: 'white',
-        },
-        {
-            id: 2,
-            name: 'Đen',
-            code: 'black',
-        },
-        {
-            id: 3,
-            name: 'Cam',
-            code: 'orange',
-        },
-        {
-            id: 4,
-            name: 'Xanh lá',
-            code: 'green',
-        },
-        {
-            id: 5,
-            name: 'Xanh trời',
-            code: 'blue',
-        },
-        {
-            id: 6,
-            name: 'Vàng',
-            code: 'yellow',
-        },
-        {
-            id: 7,
-            name: 'Hồng',
-            code: 'pink',
-        },
-        {
-            id: 8,
-            name: 'Đỏ',
-            code: 'red',
-        },
-        {
-            id: 9,
-            name: 'Nâu',
-            code: 'brown',
-        },
-    ];
+    const getData = async () => {
+        const listTrademark = await axios.get(`${apiUrl}/admin/trademark`);
+        const listColor = await axios.get(`${apiUrl}/admin/color`);
 
+        setApiTrademarks(listTrademark.data.trademark);
+        setApiColors(listColor.data.color);
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
     
 
     const refAllPrices = useRef();
     const refAllTrademark = useRef();
     const refAllColor = useRef();
     useEffect(() => {
+
         refAllPrices.current.checked = true;
         refAllTrademark.current.checked = true;
         refAllColor.current.checked = true;
 
         handleTrademark({target: refAllTrademark.current}, 1);
         handleColor({target: refAllColor.current}, 1);
-    }, []);
+    }, [apiTrademarks]);
 
     const handleTrademark = (e, i) => {
 
@@ -192,7 +134,7 @@ function Search({onClick}) {
                     {
                         apiTrademarks.map((apiTrademark, index) =>
                             <li key={index} className={cx('item-trademark')}>
-                                <input onChange={handleTrademark} id={apiTrademark.code} type='checkbox' className={cx('input-trademark')} data-trademark={apiTrademark.id} name='trademark' />
+                                <input onChange={handleTrademark} id={apiTrademark.code} type='checkbox' className={cx('input-trademark')} data-trademark={apiTrademark._id} name='trademark' />
                                 <label for={apiTrademark.code} className={cx('text-trademark')}>{apiTrademark.name}</label>
                             </li>
                         )
@@ -224,7 +166,7 @@ function Search({onClick}) {
                         <label for="5" className={cx('text-price')}>3.000.000 ~ 5.000.000 vnđ</label>
                     </li>
                     <li className={cx('item-price')}>
-                        <input onChange={handlePrice} id='6' type='radio' className={cx('input-price')} min={5000000} max={10000000} name='price' />
+                        <input onChange={handlePrice} id='6' type='radio' className={cx('input-price')} min={5000000} max={1000000000} name='price' />
                         <label for="6" className={cx('text-price')}>Trên 5.000.000 vnđ</label>
                     </li>
                 </ul>
@@ -244,7 +186,7 @@ function Search({onClick}) {
                     {
                         apiColors.map((apiColor, index) =>
                             <li key={index} className={cx('item-color', 'l-6')}>
-                                <input onChange={handleColor} id={apiColor.code} type='checkbox' className={cx('input-color')} data-color={apiColor.id} name='color' />
+                                <input onChange={handleColor} id={apiColor.code} type='checkbox' className={cx('input-color')} data-color={apiColor._id} name='color' />
                                 <label for={apiColor.code} className={cx('text-color')}>
                                     <div style={{'background-color': apiColor.code}} className={cx('board-color')}></div>
                                     {apiColor.name}

@@ -27,7 +27,8 @@
 .nav-bar{
     overflow: hidden;
     overflow-y: auto;
-    height: calc(100vh - var(--height-header));
+    height: calc(100vh - var(--height-header-admin));
+    padding-bottom: 20px;
 }
 
 .nav-bar-list{
