@@ -117,3 +117,30 @@
     font-size: 1.4rem;
     padding-left: 77px;
 }
+
+
+@media screen and (max-width: 739px) {
+    .logo-brand {
+        display: none;
+    }
+
+    .nav-bar-link {
+        padding: 10px;
+
+        span {
+            display: none;
+        }
+
+        .nav-bar-item-down-icon {
+            display: none;
+        }
+    }
+
+    .wrapper{
+        width: 46px;
+    }
+
+
+}
+
+

@@ -125,3 +125,23 @@
 }
 
 
+
+@media screen and (max-width: 739px) {
+    
+    .wrapper{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 46px;
+        height: var(--height-header-admin);
+        background-color: var(--bg-primary-light);
+        box-shadow: 0 0px 0px 0 rgba(28, 29, 31, 0.81), 0 0px 0px -8px rgba(25, 26, 27, 0.83), 0 0px 3px 0 rgba(60, 75, 100, 0.62);
+        color: var(--color-primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px;
+        z-index: 100;
+    }
+
+}
